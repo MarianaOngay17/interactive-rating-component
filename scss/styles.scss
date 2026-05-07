@@ -1,0 +1,197 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'sass:color';
+
+body{
+    font-family: v.$fuente_principal;
+    background-color: v.$Grey950;
+    color: v.$White;
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    flex-direction: column;
+}
+
+.rating{
+
+    background-color: v.$Grey900;
+    padding: 1rem;
+    border-radius: 20px;
+    width: 18rem;    
+    @include m.tablet{
+        width: 20rem;
+    }
+
+    &__icon{
+
+        background-color: color.adjust(v.$Grey900, $lightness: 5%);
+        border-radius: 50%;
+        padding: 0.8rem;
+
+        width: 15px; 
+        height: 15px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__description{
+        color: v.$Grey500;
+        font-size: 0.9rem;
+        font-weight: v.$regular;
+    }
+
+    &__options{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem 0;
+    }
+
+    &__option{
+        appearance: none;
+        -moz-appearance: none;
+        font-family: v.$fuente_principal;
+
+        background-color: color.adjust(v.$Grey900, $lightness: 5%);
+        border: none;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        padding: 1rem;
+        color: v.$Grey500;
+        font-weight: v.$bold;
+        font-size: 0.9rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover,
+        &:focus-visible{
+            cursor: pointer;
+            background-color: v.$White;
+            color: v.$Grey900;
+
+            outline: none;
+        }
+
+        &:focus{
+            outline: none;
+        }
+
+        &--active{
+            background-color: v.$Orange500 ;
+            color: v.$Grey900;
+
+            outline: none;
+        }
+    }
+
+    &__submit{
+        appearance: none;
+        -moz-appearance: none;
+
+        background-color: v.$Orange500;
+        color: v.$Grey950;
+        font-weight: v.$bold;
+        letter-spacing: 2px;
+        font-size: 0.8rem;
+        border: none;
+        border-radius: 25px;
+        font-family: v.$fuente_principal;
+        
+
+        text-transform: uppercase;
+        padding: 0.8rem;
+        width: 100%;
+
+        &:hover,
+        &:focus{
+            cursor: pointer;
+            background-color: v.$White;
+
+            outline: none;
+        }
+
+    }
+
+}
+
+.thankyou{
+
+    background-color: v.$Grey900;
+    padding: 1.5rem;
+    border-radius: 20px;
+    width: 18rem;    
+    @include m.tablet{
+        width: 20rem;
+    }
+
+    &:focus{
+        outline: 1px solid v.$Orange500;
+        outline-offset: 4px;
+    }
+
+    &__icon{
+        text-align: center;
+    }
+
+    &__selected{
+        background-color: color.adjust(v.$Grey900, $lightness: 4%);
+        border-radius: 25px;
+        width:fit-content;
+        margin: 1rem auto 32px auto; 
+        padding: 8px 16px;
+       
+        color: v.$Orange500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            margin: 0;
+            font-size: 0.9rem;    
+            line-height: 1;      
+            font-weight: v.$regular;    
+        }
+        
+    }
+
+    &__title{
+        text-align: center;
+    }
+
+    &__description{
+        color: v.$Grey500;
+        font-size: 0.9rem;
+        font-weight: v.$regular;
+        text-align: center;
+    }
+
+}
+
+.hidden{
+    display: none;
+}
+
+.attribution{
+    margin-bottom: 0;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: v.$Grey500;
+
+    a {
+        color: v.$Orange500;
+
+        &:focus{
+            outline: 2px solid v.$Orange500;
+            outline-offset: 2px;
+        }
+    }
+
+}

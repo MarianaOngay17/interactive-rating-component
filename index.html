@@ -2,48 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
   <title>Frontend Mentor | Interactive rating component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
   <!-- Rating state start -->
 
-  How did we do?
+  <div class="rating" id="rating-card">
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+    <div class="rating__icon">
+      <img src="images/icon-star.svg" alt=""> <!--alt vacio si el elemento es decorativo-->
+    </div> <!--.rating__icon-->
 
-  1 2 3 4 5
+    <div class="rating__title">
+      <h2>How did we do?</h2>
+    </div> <!--.rating__title-->
 
-  Submit
+    <div class="rating__description">
+      <p>
+        Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!
+      </p>
+    </div> <!--.rating__description-->
 
-  <!-- Rating state end -->
+    <div class="rating__options" role="group" aria-label="Select a rating from 1 to 5">
+      <button type="button" class="rating__option" data-value="1" aria-pressed="false">1</button>
+      <button type="button" class="rating__option" data-value="2" aria-pressed="false">2</button>
+      <button type="button" class="rating__option" data-value="3" aria-pressed="false">3</button>
+      <button type="button" class="rating__option" data-value="4" aria-pressed="false">4</button>
+      <button type="button" class="rating__option" data-value="5" aria-pressed="false">5</button>
+    </div> <!--rating__options-->
 
-  <!-- Thank you state start -->
+    <button class="rating__submit" value="Submit" type="button">Submit</button>
+    
+  </div> <!--.rating-->
+  
 
-  You selected <!-- Add rating here --> out of 5
+  <div class="thankyou hidden" id="thankyou-card" role="status" tabindex="-1" aria-labelledby="thanks-title">
 
-  Thank you!
+    <div class="thankyou__icon" >
+      <img src="images/illustration-thank-you.svg" alt="">
+    </div><!--.thankyou__icon-->
 
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
+    <div class="thankyou__selected">
+      <p>You selected <span id="rating-selected"></span> out of 5</p>
+    </div><!--.thankyou__selected-->
 
-  <!-- Thank you state end -->
+    <div class="thankyou__title">
+      <h2>Thank you!</h2>
+    </div>
 
+    <div class="thankyou__description">
+      <p>We appreciate you taking the time to give a rating. If you ever need more support, 
+      don’t hesitate to get in touch!</p>
+    </div>
+
+  </div> <!--.thankyou-->
   
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Mariana Ongay Ortiz</a>.
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
